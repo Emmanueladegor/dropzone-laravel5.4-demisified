@@ -25,7 +25,7 @@ class productsController extends Controller
 			//	]); Add laravel validate if you wish
 			foreach ($filename as $n => $file) {
 				$k= $n+1;
-				$filenames = time().$k. $filename[$n]->getClientOriginalName();
+				$filenames = $filename[$n]->getClientOriginalName();
 				$fileModel->{"featuredImage".$k} = $filenames;
 				$file->storeAs('public/uploads',$filenames);
 			}
